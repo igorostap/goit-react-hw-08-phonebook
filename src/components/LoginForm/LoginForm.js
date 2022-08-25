@@ -50,11 +50,11 @@ export default function LoginForm() {
 
   return (
     <div>
-      <Head>Страница логина</Head>
+      <Head>Сторінка логіна</Head>
 
       <FormBox onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
-          Почта
+          Пошта
           <Input
             type="email"
             name="email"
@@ -73,7 +73,7 @@ export default function LoginForm() {
           />
         </label>
 
-        <button type="submit">Войти</button>
+        <button type="submit">Війти</button>
       </FormBox>
     </div>
   );

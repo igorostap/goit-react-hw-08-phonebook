@@ -43,11 +43,11 @@ export default function RegisterForm() {
 
   return (
     <div>
-      <Head>Страница регистрации</Head>
+      <Head>Сторінка реєстрації</Head>
 
       <FormBox onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
-          Имя
+          Им'я
           <Input type="text" name="name" value={name} onChange={handleChange} />
         </label>
         <label style={styles.label}>
@@ -68,7 +68,7 @@ export default function RegisterForm() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit">Зареєструватись</button>
       </FormBox>
     </div>
   );
