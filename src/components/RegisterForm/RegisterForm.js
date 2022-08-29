@@ -48,7 +48,15 @@ export default function RegisterForm() {
       <FormBox onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
           Им'я
-          <Input type="text" name="name" value={name} onChange={handleChange} />
+          <Input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+          />
         </label>
         <label style={styles.label}>
           Почта
@@ -57,6 +65,9 @@ export default function RegisterForm() {
             name="email"
             value={email}
             onChange={handleChange}
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+            pattern="^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$"
           />
         </label>
         <label style={styles.label}>
@@ -66,6 +77,9 @@ export default function RegisterForm() {
             name="password"
             value={password}
             onChange={handleChange}
+            pattern="[-a-z0-9!#$%&'*+/=?^_`{|}~]+(\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*"
+            title="symbol and number"
+            required
           />
         </label>
         <button type="submit">Зареєструватись</button>

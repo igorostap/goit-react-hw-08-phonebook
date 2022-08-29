@@ -5,8 +5,19 @@ import LoginForm from './LoginForm/LoginForm';
 import AppBar from './UserMenu/AppBar';
 import { PrivateRoute } from './PrivateRoute';
 import { RedirectRoute } from './RedirectRoute';
+import { useDispatch, useSelector } from 'react-redux';
+import authSelectors from 'Redux/auth/auth-selectors';
+import authOperations from '../Redux/auth/auth-operations';
+import { useEffect } from 'react';
 
 export function App() {
+  const dispatch = useDispatch();
+  const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
       <Routes>
